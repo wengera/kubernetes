@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: utility-deployment
+  name: utility-deployment
+  namespace: prod
+spec:
+  replicas: 6
+  selector:
+    matchLabels:
+      app: utility-deployment
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: utility-deployment
+    spec:
+      containers:
+      - image: jackknife32/utility-client:dev
+        name: utility-client
+        resources:
+          limits:
+            cpu: 500m
+          requests:
+            cpu: 200m
