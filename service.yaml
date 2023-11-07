@@ -16,4 +16,4 @@ spec:
   selector:
     app: utility-deployment
   type: LoadBalancer
-  sessionAffinity: ClientIPs
+  sessionAffinity: ClientIP
